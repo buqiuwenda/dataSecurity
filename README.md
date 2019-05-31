@@ -9,7 +9,17 @@
  
 
 ## Security Vulnerabilities
+- [WenDa](http://github.com/buqiuwenda)
 
+## Thanks
+
+- [PHP manual](https://php.net/manual/zh/)
+- [qiniu cloud](https://developer.qiniu.com/)
+
+## Server Requirements
+- PHP >= 7.1.0
+- Mysql = 5.7
+- Centos = 7.0
 
 ## License
 
