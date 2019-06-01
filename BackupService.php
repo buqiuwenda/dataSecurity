@@ -22,6 +22,10 @@ class BackupService
         $password = $this->config->getPassword();
         $db = $this->config->getDatabaseName();
 
+        if(empty($username) || empty($password) || empty($db)){
+            LogService::info('数据库配置不能为空');
+            exit('数据库配置不能为空');
+        }
         $file = $this->getFile($fileName);
 
         if(file_exists($file)){
@@ -189,6 +193,11 @@ class BackupService
         $username = $this->config->getUserName();
         $password = $this->config->getPassword();
         $db = $this->config->getDatabaseName();
+
+        if(empty($username) || empty($password) || empty($db)){
+            LogService::info('数据库配置不能为空');
+            exit('数据库配置不能为空');
+        }
 
         $restoreFile = $this->getFile($restoreFileName);
 
