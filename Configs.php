@@ -66,7 +66,7 @@ final class Configs
 
     public function getKeysPath()
     {
-        return 'database';
+        return 'database/'.date('Ymd').'/wdblog.sql';
     }
 
 

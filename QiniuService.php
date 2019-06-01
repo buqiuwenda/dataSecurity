@@ -26,11 +26,17 @@ class QiniuService
 
         $accessKey = $this->config->getAccessKey();
         $secretKey = $this->config->getSecretKey();
+        $this->keys = $this->config->getKeysPath();
+
+        if(empty($accessKey) || empty($secretKey) || empty($this->keys)){
+            LogService::info('七牛云配置不能为空');
+            exit('七牛云配置不能为空');
+        }
         $this->auth = new Auth($accessKey, $secretKey);
 
         $this->uploadManager = new UploadManager();
 
-        $this->keys = $this->config->getKeysPath().'/'.date('Ymd').'/'.$fileName;
+
     }
 
 
